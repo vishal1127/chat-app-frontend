@@ -89,13 +89,21 @@
     </main>
     <footer>
       <div class="chat-footer fixed-bottom">
-        <input
-          type="text"
-          style="width: 500px; border-radius: 7px; margin-right: 10px"
-        />
-        <button type="button" class="btn btn-sm btn-outline-primary">
-          Send
-        </button>
+        <form>
+          <input
+            id="message"
+            type="text"
+            required
+            style="width: 500px; border-radius: 7px; margin-right: 10px"
+          />
+          <button
+            id="send-btn"
+            type="button"
+            class="btn btn-sm btn-outline-primary"
+          >
+            Send
+          </button>
+        </form>
       </div>
     </footer>
     <script
@@ -103,6 +111,7 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script src="../app.js"></script>
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
