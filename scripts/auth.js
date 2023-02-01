@@ -61,6 +61,12 @@ async function loginUser(e) {
         userData
       );
       alertMsg = response.data.message;
+      const { name, email } = response.data.user;
+      const userDetails = {
+        name: name,
+        email: email,
+      };
+      localStorage.setItem("User Details", JSON.stringify(userDetails));
       localStorage.setItem("Authorization", response.data.token);
       location.href = "./pages/homepage.html";
     } catch (error) {

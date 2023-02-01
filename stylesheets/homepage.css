@@ -1,0 +1,39 @@
+body {
+  background-color: #33444d;
+}
+
+main {
+  /* height: calc(100% - 52px); */
+  padding-bottom: 41px;
+}
+
+.chat-list {
+  margin-top: 10px;
+  display: grid;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.list-group {
+  width: 800px;
+  border: #212529;
+}
+
+.list-group li:nth-child(odd) {
+  background-color: rgb(86, 147, 160);
+}
+
+.list-group li:nth-child(even) {
+  background-color: rgb(119, 182, 200);
+}
+
+.list-group-item {
+  border: #212529;
+}
+
+.chat-footer {
+  display: flex;
+  justify-content: center;
+  background-color: #212529;
+  padding: 10px;
+}
