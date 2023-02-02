@@ -7,6 +7,16 @@ main {
   padding-bottom: 41px;
 }
 
+#logo-icon {
+  font-size: 40px;
+  padding-right: 10px;
+}
+
+.logo-text {
+  margin: 0;
+  font-size: 21px;
+}
+
 .chat-list {
   margin-top: 10px;
   display: grid;
