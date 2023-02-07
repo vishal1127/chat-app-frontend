@@ -28,6 +28,19 @@ main {
   display: flex;
 }
 
+.members-list {
+  justify-content: space-between;
+}
+
+.modal-body-header {
+  text-align: center;
+}
+
+.group-chats-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
 #group-chat-data {
   width: 800px;
   border: #212529;

@@ -34,6 +34,10 @@ async function registerUser(e) {
         userData
       );
       alertMsg = response.data.message;
+      nameInput.value = "";
+      emailInput.value = "";
+      phoneInput.value = "";
+      passInput.value = "";
     } catch (error) {
       console.log("Error:", error);
       alertMsg = error.response.data.message;
