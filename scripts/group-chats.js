@@ -277,7 +277,6 @@ setInterval(async () => {
       }
     );
     // if (response.data.chats.length > chatsLength) {
-    console.log("called");
     fetchGroupData(groupId);
     // }
   }

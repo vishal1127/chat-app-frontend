@@ -98,7 +98,6 @@ setInterval(async () => {
     },
   });
   if (response.data.chats.length > chatsLength) {
-    console.log("called");
     loadData();
   }
 }, 1000);
