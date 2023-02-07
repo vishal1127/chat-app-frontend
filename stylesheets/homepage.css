@@ -45,6 +45,23 @@ main {
   border: #212529;
 }
 
+#chat-list-data {
+  width: 800px;
+  border: #212529;
+}
+
+#chat-list-data li:nth-child(odd) {
+  background-color: rgb(86, 147, 160);
+}
+
+#chat-list-data li:nth-child(even) {
+  background-color: rgb(119, 182, 200);
+}
+
+#chat-list-data-item {
+  border: #212529;
+}
+
 #send-btn {
   width: 50px;
   height: 32px;
@@ -61,6 +78,7 @@ main {
 .group-chat-div {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .group-chat-section {

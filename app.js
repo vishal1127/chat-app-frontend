@@ -88,17 +88,17 @@ function signOutUser() {
   token = "";
 }
 
-// setInterval(async () => {
-//   const response = await axios.get("http://localhost:3000/getAllChats", {
-//     params: {
-//       lastMsgId: lastMsgId,
-//     },
-//     headers: {
-//       authorization: token,
-//     },
-//   });
-//   if (response.data.chats.length > chatsLength) {
-//     console.log("called");
-//     loadData();
-//   }
-// }, 1000);
+setInterval(async () => {
+  const response = await axios.get("http://localhost:3000/getPublicChats", {
+    params: {
+      lastMsgId: lastMsgId,
+    },
+    headers: {
+      authorization: token,
+    },
+  });
+  if (response.data.chats.length > chatsLength) {
+    console.log("called");
+    loadData();
+  }
+}, 1000);

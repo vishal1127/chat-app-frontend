@@ -262,3 +262,23 @@ function signOutUser() {
   location.href = "http://127.0.0.1:5500/chat-app-frontend/index.html";
   token = "";
 }
+
+setInterval(async () => {
+  if (groupId) {
+    const response = await axios.get(
+      `http://localhost:3000/getGroupChats/${groupId}`,
+      {
+        // params: {
+        //   lastMsgId: lastMsgId,
+        // },
+        headers: {
+          authorization: token,
+        },
+      }
+    );
+    // if (response.data.chats.length > chatsLength) {
+    console.log("called");
+    fetchGroupData(groupId);
+    // }
+  }
+}, 2000);
