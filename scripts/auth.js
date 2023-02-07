@@ -66,6 +66,7 @@ async function loginUser(e) {
         name: name,
         email: email,
       };
+      console.log("user details");
       localStorage.setItem("User Details", JSON.stringify(userDetails));
       localStorage.setItem("Authorization", response.data.token);
       location.href = "./pages/homepage.html";

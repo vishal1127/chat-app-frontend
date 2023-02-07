@@ -10,10 +10,11 @@ signOutBtn.addEventListener("click", signOutUser);
 const localUserData = localStorage.getItem("User Details");
 const token = localStorage.getItem("Authorization");
 let lastMsgId = 0;
+let chatsLength = 0;
 
 async function loadData() {
   try {
-    const allChats = await axios.get("http://localhost:3000/getAllChats", {
+    const allChats = await axios.get("http://localhost:3000/getPublicChats", {
       params: {
         lastMsgId: 0,
       },
@@ -23,7 +24,7 @@ async function loadData() {
     });
     chatListData.innerHTML = "";
     lastMsgId = allChats.data.chats.length - 1;
-    console.log("last msg IDDDDD", lastMsgId);
+    chatsLength = allChats.data.chats.length;
     const startingMsgId = lastMsgId - 9 > 0 ? lastMsgId - 9 : 0;
     if (lastMsgId > 9)
       allChats.data.chats = allChats.data.chats.slice(
@@ -31,9 +32,6 @@ async function loadData() {
         lastMsgId + 1
       );
     else {
-      console.log(
-        "need to change this when array allchats empty or less than 9"
-      );
       allChats.data.chats = allChats.data.chats.slice(startingMsgId, 10);
     }
     localStorage.setItem("Chats", JSON.stringify(allChats.data.chats));
@@ -60,7 +58,7 @@ async function sendMessage() {
     const message = { text: messageInput.value };
     try {
       const response = await axios.post(
-        "http://localhost:3000/sendMessage",
+        "http://localhost:3000/sendPublicMessage",
         message,
         {
           headers: {
@@ -90,17 +88,17 @@ function signOutUser() {
   token = "";
 }
 
-setInterval(async () => {
-  const response = await axios.get("http://localhost:3000/getAllChats", {
-    params: {
-      lastMsgId: lastMsgId,
-    },
-    headers: {
-      authorization: token,
-    },
-  });
-  if (response.length > 0) {
-    console.log("called");
-    loadData();
-  }
-}, 1000);
+// setInterval(async () => {
+//   const response = await axios.get("http://localhost:3000/getAllChats", {
+//     params: {
+//       lastMsgId: lastMsgId,
+//     },
+//     headers: {
+//       authorization: token,
+//     },
+//   });
+//   if (response.data.chats.length > chatsLength) {
+//     console.log("called");
+//     loadData();
+//   }
+// }, 1000);

@@ -30,7 +30,7 @@
             <p class="logo-text">Expense Tracker</p>
           </a>
           <a
-            href="/chat-app-frontend/pages/chat-groups.html"
+            href="/chat-app-frontend/pages/homepage.html"
             class="d-flex align-items-center mb-2 mb-lg-0 text-light text-decoration-none"
             style="margin-left: 20px"
           >
@@ -87,15 +87,32 @@
     </header>
     <main>
       <!-- public chats -->
-      <div class="chat-list">
-        <ul id="chat-list-data" class="list-group"></ul>
+      <div class="group-chat-div">
+        <div class="group-chat-section">
+          <!-- group listing -->
+          <div class="group-chat-names"></div>
+          <!-- group chats -->
+          <div class="group-chats">
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#groupChatModal"
+              data-bs-title="inviteMembers"
+              class="btn btn-outline-primary invite-btn"
+              style="display: none"
+            >
+              Invite members
+            </button>
+            <ul id="group-chat-data" class="list-group"></ul>
+          </div>
+        </div>
       </div>
     </main>
     <footer>
       <div class="chat-footer fixed-bottom">
         <form>
           <input
-            id="message"
+            id="group-message"
             type="text"
             required
             style="width: 500px; border-radius: 7px; margin-right: 10px"
@@ -110,12 +127,48 @@
         </form>
       </div>
     </footer>
+    <!-- modal -->
+    <div
+      class="modal fade"
+      id="groupChatModal"
+      tabindex="-1"
+      aria-labelledby="groupModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="groupModalLabel"></h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="create-group-btn" type="button" class="btn btn-primary">
+              Create
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="../scripts/bootstrap.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
-    <script src="../app.js"></script>
+    <script src="../scripts/group-chats.js"></script>
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"

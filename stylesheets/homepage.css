@@ -24,26 +24,69 @@ main {
   margin-bottom: 10px;
 }
 
-.list-group {
+.list-group-item {
+  display: flex;
+}
+
+#group-chat-data {
   width: 800px;
   border: #212529;
 }
 
-.list-group li:nth-child(odd) {
+#group-chat-data li:nth-child(odd) {
   background-color: rgb(86, 147, 160);
 }
 
-.list-group li:nth-child(even) {
+#group-chat-data li:nth-child(even) {
   background-color: rgb(119, 182, 200);
 }
 
-.list-group-item {
+#group-chat-data-item {
   border: #212529;
 }
 
+#send-btn {
+  width: 50px;
+  height: 32px;
+}
+
+/* Group CSS */
 .chat-footer {
   display: flex;
   justify-content: center;
   background-color: #212529;
   padding: 10px;
+}
+
+.group-chat-div {
+  display: flex;
+  justify-content: center;
+}
+
+.group-chat-section {
+  display: flex;
+  height: 500px;
+  background-color: #a4b5ff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.group-chat-names {
+  width: 190px;
+}
+
+.group-btn {
+  width: 185px;
+  height: 60px;
+}
+
+.group-chats {
+  display: grid;
+  height: fit-content;
+}
+
+.invite-btn {
+  justify-self: end;
+  width: 140px;
+  height: 45px;
 }
